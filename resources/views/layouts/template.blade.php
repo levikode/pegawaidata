@@ -132,11 +132,7 @@
                                 </form>
                             </div>
                         </li>
-                        <!-- <li class="nav-item">
-    <a class="nav-link" id="fullscreenToggle" href="#" role="button">
-        <i class="fas fa-expand-arrows-alt"></i>
-    </a>
-</li> -->
+                      
 
                     </ul>
                 </nav>
