@@ -1,105 +1,98 @@
 @extends('layouts.template')
-@section('judulh1','Admin - pegawai')
+
+@section('title', 'Admin - Data Pegawai')
+
+@section('judulh1', 'Data Pegawai')
+
 @section('konten')
-<div class="col-md-6">
+<div class="col-lg-6">
+    <!-- Error Handling -->
     @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your
-        input.<br><br>
+        <strong>Whoops!</strong> Ada beberapa masalah dengan inputan Anda.<br><br>
         <ul>
             @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
             @endforeach
         </ul>
     </div>
     @endif
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Data pegawai</h3>
+
+    <!-- Form Card -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Data Pegawai</h6>
         </div>
-        <!-- /.card-header -->
-        <div class=" card-body">
-            <table>
-                <tr>
-                    <th>Nama pegawai</th>
-                    <td>:</td>
-                    <td>{{ $data[0]->nama }}</td>
-                </tr>
-                <tr>
-                    <th>Nip</th>
-                    <td>:</td>
-                    <td>{{ $data[0]->nip }}</td>
-                </tr>
-                
-                <tr>
-                    <th>Nik</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->nik}}</td>
-                </tr>
-                <tr>
-                    <th>Tmt</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->tmt}}</td>
-                </tr>
-                <tr>
-                    <th>Usia</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->usia}}</td>
-                </tr>
-                <tr>
-                    <th>Masakerja</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->masakerja}}</td>
-                </tr>
-                <tr>
-                    <th>User</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->name}}</td>
-                </tr>
-                <tr>
-                    <th>Jabatan</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->jabatan}}</td>
-                </tr>
-                <tr>
-                    <th>Golongan</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->golongan}}</td>
-                </tr>
-                <tr>
-                    <th>Agama</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->agama}}</td>
-                </tr>
-                <tr>
-                    <th>Jenis Kelamin</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->jeniskelamin}}</td>
-                </tr>
-                <tr>
-                    <th>Ttl</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->ttl}}</td>
-                </tr>
-                <tr>
-                    <th>Alamat</th>
-                    <td>:</td>
-
-                    <td>{{ $data[0]->alamat}}</td>
-                </tr>
+        <div class="card-body">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <th scope="row">Nama Pegawai</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->nama }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">NIP</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->nip }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">NIK</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->nik }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">TMT</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->tmt }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Usia</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->usia }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Masa Kerja</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->masakerja }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">User</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Jabatan</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->jabatan }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Golongan</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->golongan }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Agama</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->agama }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Jenis Kelamin</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->jeniskelamin }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">TTL</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->ttl }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alamat</th>
+                        <td>:</td>
+                        <td>{{ $data[0]->alamat }}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
-        <!-- /.card-body -->
     </div>
 </div>
 @endsection

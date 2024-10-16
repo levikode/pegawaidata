@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('judulh1','Admin - Agama')
+@section('judulh1','Ubah Agama')
 
 @section('konten')
 <div class="col-md-6">
@@ -16,7 +16,8 @@
 
     <div class="card card-warning">
         <div class="card-header">
-            <h3 class="card-title">Ubah Data Agama</h3>
+        <h5 class="m-0 font-weight-bold text-warning">Ubah Data Agama</h5>
+           
         </div>
         <!-- /.card-header -->
         <!-- form start -->

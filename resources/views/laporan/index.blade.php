@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-       <center><h1>Laporan Data Pegawai</h1></center> 
+       <center><h1 class="m-0 font-weight-bold text-primary"> Laporan Data Pegawai</h1></center> 
         <style>
     table {
         width: 100%;

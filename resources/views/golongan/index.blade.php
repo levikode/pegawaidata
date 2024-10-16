@@ -16,7 +16,8 @@
 
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Input Golongan</h3>
+        <h4 class="m-0 font-weight-bold text-primary">Input Golongan</h4>
+
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -42,7 +43,8 @@
 <div class="col-md-8">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Data Golongan</h3>
+        <h4 class="m-0 font-weight-bold text-primary">Data Golongan</h4>
+
         </div>
         <!-- /.card-header -->
 

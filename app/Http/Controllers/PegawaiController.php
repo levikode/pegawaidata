@@ -109,14 +109,14 @@ class PegawaiController extends Controller
     }
 
     // Fungsi untuk menampilkan detail data pegawai
-    public function show(): View
+    public function show($id): View
     {
-        // Mengambil semua data pegawai dari database
-        $pegawai = Pegawai::all();
+        // Mengambil data pegawai berdasarkan ID
+        $pegawai = Pegawai::findOrFail($id);
         // Mengirimkan data pegawai ke view 'pegawai.show'
         return view('pegawai.show')->with([
             "title" => "Tampil Data Pegawai",
-            "data" => $pegawai
+            "pegawai" => $pegawai
         ]);
     }
 

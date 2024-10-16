@@ -16,7 +16,8 @@
 
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Input User</h3>
+        <h4 class="m-0 font-weight-bold text-primary"> Input Users</h4>
+
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -54,7 +55,8 @@
 <div class="col-md-8">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Data User</h3>
+        <h4 class="m-0 font-weight-bold text-primary">Data Users</h4>
+
         </div>
         <!-- /.card-header -->
 

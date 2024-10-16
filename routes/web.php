@@ -24,11 +24,11 @@ use App\Http\Controllers\DashboardController;
 */
 
 
-// Route::get('/',function(){
-//     return view('welcome',[
-//         "title"=>"Dashboard"
-//     ]);
-//     })->middleware('auth');
+Route::get('/',function(){
+    return view('welcome',[
+        "title"=>"Dashboard"
+    ]);
+    })->middleware('auth');
 Route::resource('pegawai',PegawaiController::class);
 Route::resource('golongan', GolonganController::class)->middleware('auth');
 Route::resource('jabatan', JabatanController::class)->middleware('auth');
