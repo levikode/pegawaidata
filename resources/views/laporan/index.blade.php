@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-       <center><h1 class="m-0 font-weight-bold text-primary"> Laporan Data Pegawai</h1></center> 
+     <center><h1 class="m-0 font-weight-bold text-primary"> Laporan Data Pegawai</h1></center>  
         <style>
     table {
         width: 100%;
@@ -51,9 +51,9 @@
             <td>{{ $dt->nik }}</td>
             <td>{{ $dt->tmt }}</td>
             <td>{{ $dt->usia }}</td>
-            <td>{{ $dt->jabatan->nama }}</td> <!-- Mengakses nama dari relasi jabatan -->
-            <td>{{ $dt->golongan->nama }}</td> <!-- Mengakses nama dari relasi golongan -->
-            <td>{{ $dt->agama->nama }}</td> <!-- Mengakses nama dari relasi agama -->
+            <td>{{ $dt->jabatan->nama }}</td> 
+            <td>{{ $dt->golongan->nama }}</td>
+            <td>{{ $dt->agama->nama }}</td>
             <td>{{ $dt->jeniskelamin->nama  }}</td>
             <td>{{ $dt->ttl }}</td>
             <td>{{ $dt->alamat }}</td>

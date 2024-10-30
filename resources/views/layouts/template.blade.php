@@ -48,7 +48,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataMaster"
                     aria-expanded="true" aria-controls="collapseDataMaster">
                     <i class="fas fa-boxes"></i>
-                    <span>Data Master</span>
+                    <span>Data Pegawai</span>
                 </a>
                 <div id="collapseDataMaster" class="collapse {{ ($title === 'Produk') ? 'show' : '' }}" aria-labelledby="headingDataMaster"
                     data-parent="#accordionSidebar">

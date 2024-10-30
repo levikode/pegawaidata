@@ -91,7 +91,7 @@
               Total User:
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-              {{ $user->count() }}
+              {{ $user->count() }} 
               </div>
             </div>
             <div class="col-auto">
@@ -100,10 +100,11 @@
           </div>
         </div>
       </div>
+
     </div>
     </div>
     <!-- Statistics Overview -->
-    <!-- <div class="row">
+    <div class="row">
         <div class="col-md-3">
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">Total Pegawai: {{ $data->count() }}</div> 
@@ -115,7 +116,7 @@
             </div>
         </div>
         </div>
-       -->
+      
         </div>
     </div>
 
