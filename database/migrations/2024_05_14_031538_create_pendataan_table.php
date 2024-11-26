@@ -11,22 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pegawais', function (Blueprint $table) {
+        Schema::create('pendataans', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('jabatan_id')->unsigned();
-            $table->bigInteger('golongan_id')->unsigned();
-            $table->bigInteger('agama_id')->unsigned();
-            $table->bigInteger('jeniskelamin_id')->unsigned();
             $table->string('nama');
+            $table->string('agama');
+            $table->string('jeniskelamin');
+            $table->string('jabatan');
+            $table->string('golongan');
+            $table->string('pendidikan');
+            $table->string('masakerja');
             $table->integer('nip');
+            $table->integer('notlp');
             $table->integer('nik');
             $table->date('tmt');
             $table->integer('usia');
             $table->integer('masakerja');
             $table->string('alamat');
             $table->string('ttl');
-            
             $table->timestamps();           
         });                
     }
@@ -36,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pegawais');
+        Schema::dropIfExists('pendataans');
     }
 };

@@ -3,19 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PegawaiController;
-use App\Http\Controllers\GolonganController;
-use App\Http\Controllers\JabatanController;
-use App\Http\Controllers\AgamaController;
-use App\Http\Controllers\JeniskelaminController;
+use App\Http\Controllers\PendataanController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DashboardController;
 
-
 /*
-|--------------------------------------------------------------------------
+|---------------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
+|---------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
@@ -23,26 +18,30 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-
-Route::get('/',function(){
-    return view('welcome',[
-        "title"=>"Dashboard"
+// Halaman Utama Dashboard (Tampilan pertama)
+Route::get('/', function () {
+    return view('welcome', [
+        "title" => "Dashboard"
     ]);
-    })->middleware('auth');
-Route::resource('pegawai',PegawaiController::class);
-Route::resource('golongan', GolonganController::class)->middleware('auth');
-Route::resource('jabatan', JabatanController::class)->middleware('auth');
-Route::resource('agama', AgamaController::class)->middleware('auth');
-Route::resource('jeniskelamin', JeniskelaminController::class)->middleware('auth');
+})->middleware('auth');
 
-Route::resource('user',UserController::class)->except('destroy','create','show','update','edit');
-Route::get('login',[LoginController::class,'loginView'])->name('login');
-Route::post('login',[LoginController::class,'authenticate']);
-Route::post('logout',[LoginController::class,'logout'])->name('auth.logout')->middleware('auth');
+// Rute untuk Pendataan - Gunakan resource route untuk pendataan
+Route::resource('pendataan', PendataanController::class)->middleware('auth');
 
+// Rute untuk User, hanya tanpa 'destroy', 'create', 'show', 'update', dan 'edit'
+Route::resource('user', UserController::class)->except(['destroy', 'create', 'show', 'update', 'edit'])->middleware('auth');
+
+// Rute untuk login dan logout
+Route::get('login', [LoginController::class, 'loginView'])->name('login');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('logout', [LoginController::class, 'logout'])->name('auth.logout')->middleware('auth');
+
+// Rute untuk Laporan
 Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
 Route::get('/laporan/export/pdf', [LaporanController::class, 'exportPDF'])->name('laporan.export.pdf');
 
+// Rute untuk Dashboard
 Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/chart-data', [App\Http\Controllers\DashboardController::class, 'getChartData']);
+// Rute untuk mendapatkan data chart untuk dashboard
+Route::get('/chart-data', [DashboardController::class, 'getChartData']);

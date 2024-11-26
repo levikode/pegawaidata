@@ -29,7 +29,7 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15"></div>
                 <i class="fas fa-home"></i>
-                <div class="sidebar-brand-text mx-3">Data Pegawai</div>
+                <div class="sidebar-brand-text mx-3">Data pendataan</div>
             </a>
 
             <!-- Divider -->
@@ -44,39 +44,33 @@
             </li>
 
             <!-- Nav Item - Data Master -->
-            <li class="nav-item {{ ($title === 'Produk') ? 'active' : '' }}">
+            <!-- <li class="nav-item {{ ($title === 'Produk') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDataMaster"
                     aria-expanded="true" aria-controls="collapseDataMaster">
                     <i class="fas fa-boxes"></i>
-                    <span>Data Pegawai</span>
+                    <span>Data pendataan</span>
                 </a>
                 <div id="collapseDataMaster" class="collapse {{ ($title === 'Produk') ? 'show' : '' }}" aria-labelledby="headingDataMaster"
                     data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Master Data:</h6>
-                        <a class="collapse-item" href="{{ route('golongan.index') }}">Golongan</a>
-                        <a class="collapse-item" href="{{ route('jabatan.index') }}">Jabatan</a>
-                        <a class="collapse-item" href="{{ route('agama.index') }}">Agama</a>
-                        <a class="collapse-item" href="{{ route('jeniskelamin.index') }}">Jenis Kelamin</a>
-                    </div>
+                   
                 </div>
-            </li>
+            </li> -->
 
-            <!-- Nav Item - Pegawai -->
-            <li class="nav-item {{ ($title === 'Pegawai') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('pegawai.index') }}">
+            <!-- Nav Item - pendataan -->
+            <!-- <li class="nav-item {{ ($title === 'pendataan') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('pendataan.index') }}">
                     <i class="fas fa-users"></i>
-                    <span>Pegawai</span>
+                    <span>Pendataan</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Admin -->
-            <li class="nav-item {{ ($title === 'user') ? 'active' : '' }}">
+            <!-- <li class="nav-item {{ ($title === 'user') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('user.index') }}">
                     <i class="fas fa-user"></i>
                     <span>Users</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Laporan -->
             <li class="nav-item {{ ($title === 'Laporan') ? 'active' : '' }}">

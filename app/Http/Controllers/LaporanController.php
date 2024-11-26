@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pegawai;
+use App\Models\Pendataan;
 use PDF;
 
 class LaporanController extends Controller
 {
-    // Menampilkan data pegawai
+    // Menampilkan data pendataan
     public function index()
     {
-        $pegawai = Pegawai::all();
-        return view('laporan.index', compact('pegawai'));
+        $pendataan = Pendataan::all();
+        return view('laporan.index', compact('pendataan'));
     }
 
     // Export PDF
     public function exportPDF()
     {
-        $pegawai = Pegawai::all();
-        $pdf = PDF::loadView('laporan.pdf', compact('pegawai'));
-        return $pdf->download('laporan-data-pegawai.pdf');
+        $pendataan = Pendataan::all();
+        $pdf = PDF::loadView('laporan.pdf', compact('pendataan'));
+        return $pdf->download('laporan-data-pendataan.pdf');
     }
 }

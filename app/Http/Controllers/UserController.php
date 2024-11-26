@@ -19,6 +19,7 @@ class UserController extends Controller
             "data" => User::all() 
         ]);
     }
+  
 
     // Fungsi untuk menyimpan user baru
     public function store(Request $request): RedirectResponse
@@ -27,7 +28,9 @@ class UserController extends Controller
         $request->validate([
             "name" => "required", 
             "email" => "required", 
-            "password" => "required" 
+            "password" => "required", 
+            "alamat" => "required", 
+            "notlp" => "required" 
         ]);
         
         // Melakukan hashing pada password sebelum disimpan ke database

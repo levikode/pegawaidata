@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Data Pegawai')
+@section('title', 'Data Pendataan')
 
 @section('tambahanCSS')
 <!-- DataTables -->
@@ -9,19 +9,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 @endsection
 
-@section('judulh1', 'Pegawai')
+@section('judulh1', 'Pendataan')
 
 @section('konten')
 
 <div class="col-md-12">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between">
-            <h4 class="m-0 font-weight-bold text-primary">Data Pegawai</h4>
-            <a href="{{ route('pegawai.create') }}" class="btn btn-success btn-icon-split">
+            <h4 class="m-0 font-weight-bold text-primary">Data Pendataan</h4>
+            <a href="{{ route('pendataan.create') }}" class="btn btn-success btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="text">Tambah Pegawai</span>
+                <span class="text">Tambah Pendataan</span>
             </a>
         </div>
         <div class="card-body">
@@ -36,13 +36,16 @@
                             <th>NIK</th>
                             <th>TMT</th>
                             <th>Usia</th>
+                            <th>Pendidikan</th>
                             <th>Masa Kerja</th>
                             <th>Jabatan</th>
                             <th>Golongan</th>
+                            <th>Riwayat Golongan</th> <!-- Menambahkan kolom Riwayat Golongan -->
                             <th>Agama</th>
                             <th>JKelamin</th>
                             <th>TT Lahir</th>
                             <th>Alamat</th>
+                            <th>No Hp</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -56,26 +59,38 @@
                             <td>{{ $dt->nik }}</td>
                             <td>{{ $dt->tmt }}</td>
                             <td>{{ $dt->usia }}</td>
+                            <td>{{ $dt->pendidikan }}</td>
                             <td>{{ $dt->masakerja }}</td>
-                            <td>{{ $dt->jabatan->nama }}</td>
-                            <td>{{ $dt->golongan->nama }}</td>
-                            <td>{{ $dt->agama->nama }}</td>
-                            <td>{{ $dt->jeniskelamin->nama }}</td>
+                            <td>{{ $dt->jabatan }}</td>
+                            <td>{{ $dt->golongan }}</td> <!-- Menampilkan golongan saat ini -->
+                            <td>
+                                @if($dt->riwayat_golongan && count($dt->riwayat_golongan) > 0)
+                                    @php
+                                        $latestGolongan = end($dt->riwayat_golongan);
+                                    @endphp
+                                    {{ $latestGolongan['golongan'] }} ({{ $latestGolongan['tanggal_mulai']->format('d-m-Y') }})
+                                @else
+                                    Tidak Ada
+                                @endif
+                            </td> <!-- Menampilkan riwayat golongan -->
+                            <td>{{ $dt->agama }}</td>
+                            <td>{{ $dt->jeniskelamin }}</td>
                             <td>{{ $dt->ttl }}</td>
                             <td>{{ $dt->alamat }}</td>
+                            <td>{{ $dt->notlp }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <form action="{{ route('pegawai.destroy', $dt->id) }}" method="POST">
+                                    <form action="{{ route('pendataan.destroy', $dt->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
-                                    <a href="{{ route('pegawai.edit', $dt->id) }}" class="btn btn-warning btn-sm">
+                                    <a href="{{ route('pendataan.edit', $dt->id) }}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('pegawai.show', $dt->id) }}" class="btn btn-success btn-sm">
+                                    <a href="{{ route('pendataan.show', $dt->id) }}" class="btn btn-success btn-sm">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                 </div>

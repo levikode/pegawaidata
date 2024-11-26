@@ -41,6 +41,14 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
+                <div class="form-group">
+                    <label for="alamat">alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder=" Alamat Lengkap" required  value="{{old('alamat')}}">
+                </div>
+                <div class="form-group">
+                    <label for="notlp">notlp</label>
+                    <input type="text" class="form-control" id="notlp" name="notlp" placeholder=" No Hp" required  value="{{old('notlp')}}">
+                </div>
             </div>
             <!-- /.card-body -->
 
@@ -67,6 +75,8 @@
                         <th>No</th>
                         <th>Nama </th>
                         <th>Email</th>                                   
+                        <th>Alamat</th>                                   
+                        <th>No HP</th>                                   
                     </tr>
                 </thead>
                 <tbody>
@@ -76,6 +86,8 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $dt->name }}</td>
                         <td>{{ $dt->email }}</td>
+                        <td>{{ $dt->alamat }}</td>
+                        <td>{{ $dt->notlp }}</td>
                     </tr>
 
                     @endforeach

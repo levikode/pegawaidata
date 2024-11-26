@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pegawai;
+use App\Models\Pendataan;
 use App\Models\User;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $data = Pegawai::all();  // Ambil data dari database
+        $data = Pendataan::all();  // Ambil data dari database
         $title = 'Dashboard';    // Set variabel title
         $user = User::all();  
         return view('welcome', compact('data', 'title', 'user'));
@@ -18,11 +18,11 @@ class DashboardController extends Controller
   
     public function getChartData()
     {
-        $totalPegawai = Pegawai::count();  // Menghitung jumlah pegawai
+        $totalpendataan = Pendataan::count();  // Menghitung jumlah pendataan
         $totalUser = User::count();        // Menghitung jumlah user
 
         return response()->json([
-            'pegawai' => $totalPegawai,
+            'pendataan' => $totalpendataan,
             'user' => $totalUser
         ]);
     

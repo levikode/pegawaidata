@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laporan Data Pegawai</title>
+    <title>Laporan Data pendataan</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -14,7 +14,7 @@
         }
         table, th, td {
             border: 1px solid black;
-            padding: 8px;
+            padding: 3px;
             text-align: left;
         }
         th {
@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<center><h2>Laporan Data Pegawai</h2></center>
+<center><h2>Laporan Data pendataan</h2></center>
 
 <table>
     <thead>
@@ -41,10 +41,11 @@
             <th>Jenis Kelamin</th>
             <th>Tanggal Lahir</th>
             <th>Alamat</th>
+            <th>Notlp</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($pegawai as $dt)
+        @foreach ($pendataan as $dt)
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $dt->nama }}</td>
@@ -52,12 +53,13 @@
                 <td>{{ $dt->nik }}</td>
                 <td>{{ $dt->tmt }}</td>
                 <td>{{ $dt->usia }}</td>
-                <td>{{ $dt->jabatan->nama }}</td>
-                <td>{{ $dt->golongan->nama }}</td>
-                <td>{{ $dt->agama->nama }}</td>
-                <td>{{ $dt->jeniskelamin->nama  }}</td>
+                <td>{{ $dt->jabatan}}</td>
+                <td>{{ $dt->golongan}}</td>
+                <td>{{ $dt->agama}}</td>
+                <td>{{ $dt->jeniskelamin}}</td>
                 <td>{{ $dt->ttl }}</td>
                 <td>{{ $dt->alamat }}</td>
+                <td>{{ $dt->notlp }}</td>
             </tr>
         @endforeach
     </tbody>
